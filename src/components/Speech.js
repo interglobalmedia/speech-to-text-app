@@ -73,7 +73,7 @@ class Speech extends Component {
     render() {
         return (
             <div>
-                <h1>Voice Controlled Notes App</h1>
+                <h1 className={styles.appTitle}>Voice Controlled Notes App</h1>
                 <p className={styles.pageDescription}>A tiny app that allows you to take notes by recording your voice</p>
                 <h3 className={styles.noBrowserSupport}>Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.</h3>
                 <div className={styles.Speech}>
