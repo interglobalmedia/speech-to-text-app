@@ -28,7 +28,7 @@ module.exports = env => {
                 },
                 module: {
                     rules: [{
-                            test: /\.js?/,
+                            test: /\.js$/,
                             exclude: /node_modules/,
                             use: {
                                 loader: 'babel-loader'
@@ -61,19 +61,13 @@ module.exports = env => {
                                     },
                                 }],
                         },
-                        {
-                            test: /\.json$/,
-                            use: {
-                                loader: 'raw-loader'
-                            }
-                        }
                     ]
                 },
                 plugins: [
                     new HtmlWebpackPlugin({
                         template: 'src/index.html',
                         favicon: 'src/favicon.ico',
-                        styles: 'src/styles.css',
+                        // styles: 'src/styles.css',
                         inject: true
                     }),
                     new webpack.NamedModulesPlugin(),

@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
+import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 import styles from './Speech.scss';
 
-let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-let recognition = new SpeechRecognition();
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+var recognition = new SpeechRecognition();
 
 recognition.continuous = true;
 recognition.interimResults = true;
 recognition.lang = 'en-US';
 
 class Speech extends Component {
-    state = {
-        listening: false
-    }
+        state = {
+            listening: false
+        }
+    
     toggleListen = () => {
         this.setState({
             listening: !this.state.listening
@@ -21,7 +22,7 @@ class Speech extends Component {
     }
 
     handleListen = () => {
-        // handle speech recognition here
+        console.log('listening?', this.state.listening);
         if (this.state.listening) {
             recognition.start();
             recognition.onend = () => {
@@ -39,7 +40,7 @@ class Speech extends Component {
         }
         let finalTranscript = '';
         recognition.onresult = event => {
-            let interimTranscript;
+            let interimTranscript = '';
             for (let i = event.resultIndex; i < event.results.length; i++) {
                 const transcript = event.results[i][0].transcript;
                 if (event.results[i].isFinal) finalTranscript += transcript + ' ';
