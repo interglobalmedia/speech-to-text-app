@@ -9,7 +9,8 @@
         "clean": "rimraf dist",
         "cleanSrc": "rimraf dist/src",
         "start": "webpack-dev-server --mode development --config config/webpack.base.config.js --open --hot --history-api-fallback --env.PLATFORM=local --env.VERSION=stag",
-        "predeploy": "webpack --mode production --config config/webpack.prod.config.js --env.PLATFORM=production --env.VERSION=stag --progress"
+        "predeploy": "webpack --mode production --config config/webpack.prod.config.js --env.PLATFORM=production --env.VERSION=stag --progress",
+        "deploy": "gh-pages -d dist"
     },
     "jest": {
         "setupFiles": [
@@ -17,7 +18,7 @@
         ],
         "moduleNameMapper": {
             "\\.(pdf|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-            "\\.(css|less)$": "identity-obj-proxy"
+            "\\.(css|less|scss)$": "identity-obj-proxy"
         }
     },
     "author": "Maria D. Campbell",
