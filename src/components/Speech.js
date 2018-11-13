@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { titleCase} from '../utils/titleCase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 import styles from './Speech.scss';
