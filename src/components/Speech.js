@@ -3,8 +3,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 import styles from './Speech.scss';
 
-var SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition;
-var recognition = new SpeechRecognition();
+import { saveNote, getAllNotes} from '../utils/helpers';
+
+try {
+    var SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition;
+    var recognition = new SpeechRecognition();
+}
+catch(e) {
+    console.error(e);
+    const noBrowserSupport = document.querySelector('.noBrowserSupprt');
+    noBrowserSupport.style.visibility = 'visible';
+    const app = document.querySelector('.app');
+    app.style.visibility = 'hidden';
+}
 
 recognition.continuous = true;
 recognition.interimResults = true;
@@ -80,10 +91,11 @@ class Speech extends Component {
                     <h3>Add New Note</h3>
                     <div className="input-single">
                         <p>Create a new note by using voice recognition.</p>
+                        <p id="recording-instructions">Press the blue <strong>Start Recognition</strong> button and allow access.</p>
+                        <button className={styles.saveNote} title="Save Note">Save Note</button>
                     </div>
-                    
-                    <div id='interim' className={styles.interim} placeholder="Interim draft goes here" rows="3"></div>
-                    <div id='final' className={styles.final} placeholder="Final draft goes here" rows="3"></div>
+                    <div id="interim" className={styles.interim} placeholder="Interim draft goes here" rows="3"></div>
+                    <div id="final" className={styles.final} placeholder="Final draft goes here" rows="3"></div>
                     <button id='microphone-btn' className={styles.button} onClick={this.toggleListen}><FontAwesomeIcon icon={faPlayCircle} /></button>
 
                     <h3>My Saved Notes</h3>
@@ -92,7 +104,6 @@ class Speech extends Component {
                             <p className="no-notes">You don't have any notes.</p>
                         </li>
                     </ul>
-
                 </div>
             </div>
         )
