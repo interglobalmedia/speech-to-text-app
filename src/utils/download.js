@@ -20,7 +20,5 @@ export const localStorageToFile = () => {
         downloadLink.style.display = 'none';
         // add .download so works in Firefox desktop.
         document.body.appendChild(downloadLink.download);
-
     }
-    downloadLink.click();
 }

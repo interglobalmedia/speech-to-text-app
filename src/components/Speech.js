@@ -7,8 +7,8 @@ import {SaveNote} from './SaveNote';
 import {GetNotes} from './GetNotes';
 import {localStorageToFile} from '../utils/download';
 
-var SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition;
-var recognition = new SpeechRecognition();
+const SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
 
 recognition.continuous = true;
 recognition.interimResults = true;
@@ -111,6 +111,7 @@ class Speech extends Component {
                     <div className="input-single">
                         <p>Create a new note by using voice recognition.</p>
                         <p id="recording-instructions">Press the blue <strong className={styles.strong}>Start Recognition</strong> button and allow access.</p>
+                        <div className={styles.supportMsg} id="support-msg">{'webkitSpeechRecognition' in window ? 'Your browser supports speech recognition.' : 'Sorry but your browser does not support speech recognition.'}</div>
                         <div className={styles.storagequotaMsg} id="storagequota-msg"></div>
                         <button onClick={SaveNote} className={styles.saveNote} title="Save Note">Save Note</button>
                         <button onClick={localStorageToFile} className={styles.fileSaveButton}><a className={styles.download} id="save" title="Download Notes">Download</a></button>

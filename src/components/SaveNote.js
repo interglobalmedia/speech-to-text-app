@@ -15,7 +15,7 @@ export const SaveNote = () => {
         try {
             // set interval and autosave every second.
             setInterval(() => {
-                localStorage.setItem('note-' + dateTime, note);
+                localStorage.setItem('note-' + dateTime, ' ' + note);
             }, 1000);
         } catch (domException) {
             if (domException.name === 'QUOTA_EXCEEDED_ERR' || domException.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
@@ -23,5 +23,5 @@ export const SaveNote = () => {
             }
         }
     }
-    localStorage.setItem('note-' + dateTime, note);
+    localStorage.setItem('note-' + dateTime, ' ' + note);
 }
