@@ -5,6 +5,7 @@ import styles from './Speech.scss';
 import {clearAll, reset} from '../utils/helpers';
 import {SaveNote} from './SaveNote';
 import {GetNotes} from './GetNotes';
+import {localStorageToFile} from '../utils/download';
 
 var SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
@@ -111,7 +112,7 @@ class Speech extends Component {
                         <p>Create a new note by using voice recognition.</p>
                         <p id="recording-instructions">Press the blue <strong>Start Recognition</strong> button and allow access.</p>
                         <button onClick={SaveNote} className={styles.saveNote} title="Save Note">Save Note</button>
-                        <button onClick={clearAll} className={styles.deleteAll} title="Clear All Notes">Clear Storage</button>
+                        <button onClick={localStorageToFile} className={styles.fileSaveButton}><a className={styles.download} id="save" title="Download Notes">Download</a></button>
                         <button onClick={reset} className={styles.reset} title="Clear All Notes">Refresh</button>
                     </div>
                     <div id="interim" className={styles.interim} placeholder="Interim draft goes here" rows="3"></div>
@@ -119,7 +120,8 @@ class Speech extends Component {
                     <button id='microphone-btn' className={styles.button} onClick={this.toggleListen}><FontAwesomeIcon icon={faPlayCircle} /></button>
 
                     <h3>My Saved Notes</h3>
-                    <button className={styles.getStorage} onClick={GetNotes}>Get Storage</button>
+                    <button className={styles.getStorage} onClick={GetNotes} title="Get Storage">Get Storage</button>
+                    <button onClick={clearAll} className={styles.deleteAll} title="Clear All Notes">Clear Storage</button>
                     <ul id="storage">
                         <li id="note">
                         </li>

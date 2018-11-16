@@ -48,7 +48,8 @@ button {
 .saveNote,
 .deleteAll,
 .reset,
-.getStorage {
+.getStorage,
+.fileSaveButton {
     background: tomato;
     padding: 8px;
     font-size: .8rem;
@@ -58,8 +59,9 @@ button {
 }
 
 .saveNote,
+.fileSaveButton,
 .reset {
-    width: 6rem;
+    width: 5.7rem;
     height: 2.25rem;
 }
 
@@ -70,8 +72,13 @@ button {
 }
 
 .deleteAll,
+.fileSaveButton,
 .reset {
     margin-left: 10px;
+}
+
+.download {
+    text-decoration: none;
 }
 
 .button {
