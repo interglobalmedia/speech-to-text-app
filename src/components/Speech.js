@@ -110,7 +110,7 @@ class Speech extends Component {
                     <h3>Add New Note</h3>
                     <div className="input-single">
                         <p>Create a new note by using voice recognition.</p>
-                        <p id="recording-instructions">Press the blue <strong>Start Recognition</strong> button and allow access.</p>
+                        <p id="recording-instructions">Press the blue <strong className={styles.strong}>Start Recognition</strong> button and allow access.</p>
                         <button onClick={SaveNote} className={styles.saveNote} title="Save Note">Save Note</button>
                         <button onClick={localStorageToFile} className={styles.fileSaveButton}><a className={styles.download} id="save" title="Download Notes">Download</a></button>
                         <button onClick={reset} className={styles.reset} title="Clear All Notes">Refresh</button>
