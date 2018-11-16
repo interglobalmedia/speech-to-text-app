@@ -1,21 +1,13 @@
-import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+import React, {Component} from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
 import styles from './Speech.scss';
+import {clearAll, reset} from '../utils/helpers';
+import {SaveNote} from './SaveNote';
+import {GetNotes} from './GetNotes';
 
-import { saveNote, getAllNotes} from '../utils/helpers';
-
-try {
-    var SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition;
-    var recognition = new SpeechRecognition();
-}
-catch(e) {
-    console.error(e);
-    const noBrowserSupport = document.querySelector('.noBrowserSupprt');
-    noBrowserSupport.style.visibility = 'visible';
-    const app = document.querySelector('.app');
-    app.style.visibility = 'hidden';
-}
+var SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition;
+var recognition = new SpeechRecognition();
 
 recognition.continuous = true;
 recognition.interimResults = true;
@@ -23,7 +15,9 @@ recognition.lang = 'en-US';
 
 class Speech extends Component {
     state = {
-            listening: false
+            listening: false,
+            newNote: '',
+            notes: []
         }
         
     toggleListen = () => {
@@ -81,6 +75,30 @@ class Speech extends Component {
             console.log('Error occurred in recognition: ' + event.error);
         }
     }
+    updateInput = (key, value) => {
+        this.setState({[key]: value})
+    }
+
+    addNote = () => {
+        const newNote = {
+            id: `${new Date().toLocaleString().split(',').join(' ')}`,
+            value: this.state.ewNote.slice()
+        }
+        const notes = [...this.state.notes]
+        notes.push(newNote);
+        this.setState({
+            notes,
+            newNote: ''
+        })
+    }
+    deleteNote = (id) => {
+        const notes = [...this.state.notes];
+        const updatedNotes = notes.filter(note => note.id !== id);
+
+        this.setState({
+            notes: updatedNotes
+        })
+    }
     render() {
         return (
             <div>
@@ -92,18 +110,21 @@ class Speech extends Component {
                     <div className="input-single">
                         <p>Create a new note by using voice recognition.</p>
                         <p id="recording-instructions">Press the blue <strong>Start Recognition</strong> button and allow access.</p>
-                        <button className={styles.saveNote} title="Save Note">Save Note</button>
+                        <button onClick={SaveNote} className={styles.saveNote} title="Save Note">Save Note</button>
+                        <button onClick={clearAll} className={styles.deleteAll} title="Clear All Notes">Clear Storage</button>
+                        <button onClick={reset} className={styles.reset} title="Clear All Notes">Refresh</button>
                     </div>
                     <div id="interim" className={styles.interim} placeholder="Interim draft goes here" rows="3"></div>
                     <div id="final" className={styles.final} placeholder="Final draft goes here" rows="3"></div>
                     <button id='microphone-btn' className={styles.button} onClick={this.toggleListen}><FontAwesomeIcon icon={faPlayCircle} /></button>
 
                     <h3>My Saved Notes</h3>
-                    <ul id="notes">
-                        <li>
-                            <p className="no-notes">You don't have any notes.</p>
+                    <button className={styles.getStorage} onClick={GetNotes}>Get Storage</button>
+                    <ul id="storage">
+                        <li id="note">
                         </li>
                     </ul>
+                    <ul className="notes"></ul>
                 </div>
             </div>
         )

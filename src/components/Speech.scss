@@ -1,5 +1,5 @@
 ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
 }
 
@@ -28,12 +28,6 @@ p {
     margin: 0 auto;
 }
 
-.tz-link {
-    font-size: 1em;
-    color: #1da7da;
-    text-decoration: none;
-}
-
 .noBrowserSupport {
     display: none;
     font-size: 1.2rem;
@@ -51,13 +45,33 @@ button {
     cursor: pointer;
 }
 
-.saveNote {
+.saveNote,
+.deleteAll,
+.reset,
+.getStorage {
     background: tomato;
     padding: 8px;
     font-size: .8rem;
     border-radius: 3px;
     color: AntiqueWhite;
     letter-spacing: 0.07rem;
+}
+
+.saveNote,
+.reset {
+    width: 6rem;
+    height: 2.25rem;
+}
+
+.getStorage,
+.deleteAll {
+    width: 7.5rem;
+    height: 2.25rem;
+}
+
+.deleteAll,
+.reset {
+    margin-left: 10px;
 }
 
 .button {
@@ -91,39 +105,6 @@ button {
     flex-direction: column;
 }
 
-#note-textarea {
-    margin: 20px 0;
-}
-
 #recording-instructions {
     margin: 15px auto 60px;
 }
-
-#notes {
-    padding-top: 20px;
-}
-
-.note .header {
-    font-size: 0.9em;
-    color: #888;
-    margin-bottom: 10px;
-}
-
-.note .delete-note,
-.note .listen-note {
-    text-decoration: none;
-    margin-left: 15px;
-}
-
-.note .content {
-    margin-bottom: 40px;
-}
-
-// @media (max-width: 768px) {
-//     .container {
-//         padding: 50px 25px;
-//     }
-//     button {
-//         margin-bottom: 10px;
-//     }
-// }
