@@ -110,6 +110,7 @@ class Speech extends Component {
                     <h3>Add New Note</h3>
                     <div className="input-single">
                         <p>Create a new note by using voice recognition.</p>
+                        <p>Access detailed instructions <a className={styles.documentation} href="https://github.com/interglobalmedia/speech-to-text-app" target="_blank">here</a>.</p>
                         <p id="recording-instructions">Press the blue <strong className={styles.strong}>Start Recognition</strong> button and allow access.</p>
                         <div className={styles.supportMsg} id="support-msg">{'webkitSpeechRecognition' in window ? 'Your browser supports speech recognition.' : 'Sorry but your browser does not support speech recognition.'}</div>
                         <div className={styles.storagequotaMsg} id="storagequota-msg"></div>
