@@ -117,8 +117,8 @@ class Speech extends Component {
                         <button onClick={localStorageToFile} className={styles.fileSaveButton}><a className={styles.download} id="save" title="Download Notes">Download</a></button>
                         <button onClick={reset} className={styles.reset} title="Clear All Notes">Refresh</button>
                     </div>
-                    <div id="interim" className={styles.interim} placeholder="Interim draft goes here" rows="3"></div>
-                    <div id="final" className={styles.final} placeholder="Final draft goes here" rows="3"></div>
+                    <div id="interim" className={styles.interim} rows="3">Interim draft goes here</div>
+                    <div id="final" className={styles.final} rows="3">Final draft goes here</div>
                     <button id='microphone-btn' className={styles.button} onClick={this.toggleListen}><FontAwesomeIcon icon={faPlayCircle} /></button>
 
                     <h3>My Saved Notes</h3>
