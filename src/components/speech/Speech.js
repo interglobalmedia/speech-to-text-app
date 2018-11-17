@@ -16,9 +16,7 @@ recognition.lang = 'en-US';
 
 class Speech extends Component {
     state = {
-            listening: false,
-            newNote: '',
-            notes: []
+            listening: false
         }
         
     toggleListen = () => {
