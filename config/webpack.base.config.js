@@ -11,10 +11,7 @@ const VENDOR_LIBS = [
 
 module.exports = env => {
     
-    const {
-        PLATFORM,
-        VERSION
-    } = env;
+    const {PLATFORM, VERSION} = env;
    
         return merge([
             {
@@ -23,7 +20,7 @@ module.exports = env => {
                     bundle: './src/index.js'
                 },
                 output: {
-                    filename: PLATFORM === 'production' ? 'scripts/[name]-[chunkash:8].js' : 'scripts/[name].js',
+                    filename: PLATFORM === 'production' ? 'scripts/[name]-[contenthash].js' : 'scripts/[name].js',
                     path: path.resolve(__dirname, '../dist')
                 },
                 module: {
@@ -67,12 +64,12 @@ module.exports = env => {
                     new HtmlWebpackPlugin({
                         template: 'src/index.html',
                         favicon: 'src/favicon.ico',
-                        // styles: 'src/styles.css',
+                        styles: 'src/styles.css',
                         inject: true
                     }),
                     new webpack.NamedModulesPlugin(),
                     new MiniCssExtractPlugin({
-                        filename: PLATFORM === 'production' ? 'styles/[name]-[hash].css' : 'styles/[name].css',
+                        filename: PLATFORM === 'production' ? 'styles/[name]-[hash].css' : '[name].css',
                     }),
                     new CopyWebpackPlugin([{
                         from: 'src/static'

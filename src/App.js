@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Speech from './components/Speech';
+import Speech from './components/speech/Speech';
 import styles from './App.scss';
 
 class App extends Component {

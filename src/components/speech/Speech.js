@@ -3,8 +3,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
 import styles from './Speech.scss';
 import {clearAll, reset} from '../utils/helpers';
-import {SaveNote} from './SaveNote';
-import {GetNotes} from './GetNotes';
+import {SaveNote} from '../savenote/SaveNote';
+import {GetNotes} from '../getnote/GetNotes';
 import {localStorageToFile} from '../utils/download';
 
 const SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition;

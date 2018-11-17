@@ -1,4 +1,4 @@
-import { clearAll, reset } from '../utils/helpers';
+import { clearAll, reset } from './helpers';
 
 it('should clear all from localStorage', () => {
     const localStorageMock = {
