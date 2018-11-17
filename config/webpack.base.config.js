@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const VENDOR_LIBS = [
     'react', 'react-dom'
@@ -61,6 +62,7 @@ module.exports = env => {
                     ]
                 },
                 plugins: [
+                    new CleanWebpackPlugin(['dist']),
                     new HtmlWebpackPlugin({
                         template: 'src/index.html',
                         favicon: 'src/favicon.ico',

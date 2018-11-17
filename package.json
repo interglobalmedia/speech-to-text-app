@@ -49,6 +49,7 @@
         "babel-jest": "^23.6.0",
         "babel-loader": "^8.0.4",
         "bili": "^3.3.4",
+        "clean-webpack-plugin": "^1.0.0",
         "copy-webpack-plugin": "^4.6.0",
         "css-loader": "^1.0.1",
         "dotenv": "^6.1.0",

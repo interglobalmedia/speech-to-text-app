@@ -6,8 +6,5 @@ export const GetNotes = () => {
         noteList.push(`${note.innerHTML}`);
         const storage = document.getElementById('storage');
         storage.innerHTML = `${noteList.join('')}`;
-        noteList.sort(function (a, b) {
-            return b.localStorage.key(i) - a.localStorage.key(i);
-        })
     }
 }
