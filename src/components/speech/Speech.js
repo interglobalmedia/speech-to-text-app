@@ -76,30 +76,6 @@ class Speech extends Component {
             console.log('Error occurred in recognition: ' + event.error);
         }
     }
-    updateInput = (key, value) => {
-        this.setState({[key]: value})
-    }
-
-    addNote = () => {
-        const newNote = {
-            id: `${new Date().toLocaleString().split(',').join(' ')}`,
-            value: this.state.ewNote.slice()
-        }
-        const notes = [...this.state.notes]
-        notes.push(newNote);
-        this.setState({
-            notes,
-            newNote: ''
-        })
-    }
-    deleteNote = (id) => {
-        const notes = [...this.state.notes];
-        const updatedNotes = notes.filter(note => note.id !== id);
-
-        this.setState({
-            notes: updatedNotes
-        })
-    }
     render() {
         return (
             <div>
@@ -110,6 +86,7 @@ class Speech extends Component {
                     <h3>Add New Note</h3>
                     <div className="input-single">
                         <p>Create a new note by using voice recognition.</p>
+                        <p>This app is best used on desktop, because there is a <strong className={styles.strong}>repeat bug </strong> on <strong className={styles.strong}>Google Chrome mobile</strong>.</p>
                         <p>Access detailed instructions <a className={styles.documentation} href="https://github.com/interglobalmedia/speech-to-text-app" target="_blank">here</a>.</p>
                         <p id="recording-instructions">Press the blue <strong className={styles.strong}>Start Recognition</strong> button and allow access.</p>
                         <div className={styles.supportMsg} id="support-msg">{'webkitSpeechRecognition' in window ? 'Your browser supports speech recognition.' : 'Sorry but your browser does not support speech recognition.'}</div>

@@ -2,7 +2,9 @@
 
 This little app was built with React, Webpack, The Web Speech Recognition Api, and local storage. I also use Babel 7 for Js compilation and Jest for testing.
 
-`It only works in Google Chrome`.
+`It only works in Google Chrome`. There is also a `repeat bug` in `mobile Google Chrome`. When you `speak` your note, it repeats at least once and then on save, the repeat(s) is saved as well. In addition, `interimResults` does not render on `Google Chrome mobile`. I will be investigating this further. So for now, this app is best used on desktop, and not on mobile.
+
+I also have to figure out how to connect my desktop to my Google Pixel 2 so that one can access downloads made in mobile on desktop. I have achieved this for another application via iPhone, so it is possible. The question is how to do it between a Google Pixel 2 and a Macbook Pro!
 
 ## How to Use:
 
