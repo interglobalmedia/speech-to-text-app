@@ -78,28 +78,70 @@ class Speech extends Component {
         return (
             <div>
                 <h1 className={styles.appTitle}>Voice Controlled Notes App</h1>
-                <p className={styles.pageDescription}>A tiny app that allows you to take notes by recording your voice</p>
-                <h3 className={styles.noBrowserSupport}>Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.</h3>
+                <p className={styles.pageDescription}>
+                    A tiny app that allows you to take notes by recording your voice
+                </p>
+                <h3 className={styles.noBrowserSupport}>
+                    Sorry, Your Browser Does not Support the Web Speech API. Try Opening This Demo In Google Chrome.
+                </h3>
                 <div className={styles.Speech}>
                     <h3>Add New Note</h3>
                     <div className="input-single">
                         <p>Create a new note by using voice recognition.</p>
-                        <p>This app is best used on desktop, because there is a <strong className={styles.strong}>repeat bug </strong> on <strong className={styles.strong}>Google Chrome mobile</strong>.</p>
-                        <p>Access detailed instructions <a className={styles.documentation} href="https://github.com/interglobalmedia/speech-to-text-app" target="_blank">here</a>.</p>
-                        <p id="recording-instructions">Press the blue <strong className={styles.strong}>Start Recognition</strong> button and allow access.</p>
-                        <div className={styles.supportMsg} id="support-msg">{'webkitSpeechRecognition' in window ? 'Your browser supports speech recognition.' : 'Sorry but your browser does not support speech recognition.'}</div>
+                        <p>
+                            This app is best used on desktop, because there is a 
+                            <strong className={styles.strong}>repeat bug </strong> 
+                            on <strong className={styles.strong}>Google Chrome mobile</strong>.
+                        </p>
+                        <p>Access detailed instructions 
+                            <a 
+                            className={styles.documentation} 
+                                href="https://github.com/interglobalmedia/speech-to-text-app" 
+                                target="blank" rel="noopener noreferrer">
+                            here
+                            </a>.
+                        </p>
+                        <p id="recording-instructions">
+                        Press the blue 
+                        <strong className={styles.strong}>
+                        Start Recognition
+                        </strong> button and allow access.
+                        </p>
+                        <div className={styles.supportMsg} id="support-msg">
+                        {'webkitSpeechRecognition' in window ? 
+                        'Your browser supports speech recognition.' 
+                        : 'Sorry but your browser does not support speech recognition.'}
+                        </div>
                         <div className={styles.storagequotaMsg} id="storagequota-msg"></div>
-                        <button onClick={SaveNote} className={styles.saveNote} title="Save Note">Save Note</button>
-                        <button onClick={localStorageToFile} className={styles.fileSaveButton}><a className={styles.download} id="save" title="Download Notes">Download</a></button>
-                        <button onClick={reset} className={styles.reset} title="Clear All Notes">Refresh</button>
+                        <button onClick={SaveNote} className={styles.saveNote} title="Save Note">
+                        Save Note
+                        </button>
+                        <button onClick={localStorageToFile} className={styles.fileSaveButton}>
+                            <a className={styles.download} id="save" title="Download Notes">
+                            Download
+                            </a>
+                        </button>
+                        <button onClick={reset} className={styles.reset} title="Clear All Notes">
+                        Refresh
+                        </button>
                     </div>
-                    <div id="interim" className={styles.interim} rows="3">Interim draft goes here</div>
-                    <div id="final" className={styles.final} rows="3">Final draft goes here</div>
-                    <button id='microphone-btn' className={styles.button} onClick={this.toggleListen}><FontAwesomeIcon icon={faPlayCircle} /></button>
+                    <div id="interim" className={styles.interim} rows="3">
+                    Interim draft goes here
+                    </div>
+                    <div id="final" className={styles.final} rows="3">
+                    Final draft goes here
+                    </div>
+                    <button id='microphone-btn' className={styles.button} onClick={this.toggleListen}>
+                        <FontAwesomeIcon icon={faPlayCircle} />
+                    </button>
 
                     <h3>My Saved Notes</h3>
-                    <button className={styles.getStorage} onClick={GetNotes} title="Get Storage">Get Storage</button>
-                    <button onClick={clearAll} className={styles.deleteAll} title="Clear All Notes">Clear Storage</button>
+                    <button className={styles.getStorage} onClick={GetNotes} title="Get Storage">
+                    Get Storage
+                    </button>
+                    <button onClick={clearAll} className={styles.deleteAll} title="Clear All Notes">
+                    Clear Storage
+                    </button>
                     <ul id="storage">
                         <li id="note">
                         </li>

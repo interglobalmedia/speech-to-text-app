@@ -6,6 +6,7 @@
     "main": "index.js",
     "scripts": {
         "test": "jest",
+        "lint": "eslint .",
         "clean": "rimraf dist",
         "cleanSrc": "rimraf dist/src",
         "start": "webpack-dev-server --mode development --config config/webpack.base.config.js --open --hot --history-api-fallback --env.PLATFORM=local --env.VERSION=stag",
@@ -18,7 +19,7 @@
         ],
         "moduleNameMapper": {
             "\\.(pdf|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-            "\\.(css|less)$": "identity-obj-proxy"
+            "\\.(css|less|scss)$": "identity-obj-proxy"
         }
     },
     "author": "Maria D. Campbell",
@@ -43,6 +44,7 @@
         "@babel/register": "^7.0.0",
         "autoprefixer": "^9.3.1",
         "babel-core": "^7.0.0-bridge.0",
+        "babel-eslint": "^10.0.1",
         "babel-jest": "^23.6.0",
         "babel-loader": "^8.0.4",
         "bili": "^3.3.4",
@@ -52,6 +54,7 @@
         "enzyme": "^3.7.0",
         "eslint": "^5.9.0",
         "eslint-config-airbnb": "^17.1.0",
+        "eslint-loader": "^2.1.1",
         "eslint-plugin-import": "^2.14.0",
         "eslint-plugin-jsx-a11y": "^6.1.2",
         "eslint-plugin-react": "^7.11.1",
@@ -71,6 +74,7 @@
         "regenerator-runtime": "^0.12.1",
         "rimraf": "^2.6.2",
         "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.1",
         "uglifyjs-webpack-plugin": "^2.0.1",
         "url-loader": "^1.1.2",
         "webpack": "^4.3.0",

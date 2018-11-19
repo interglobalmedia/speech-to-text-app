@@ -33,10 +33,18 @@ module.exports = env => {
                             }
                         },
                         {
+                            test: /\.js$/,
+                            exclude: /node_modules/,
+                            loaders: [
+                                'babel-loader', 
+                                'eslint-loader'
+                            ]
+                        },
+                        {
                             test: /\.(scss|sass|css)$/,
                             exclude: /node_modules/,
                             loaders: [
-                                MiniCssExtractPlugin.loader,
+                                PLATFORM === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
                                 {
                                     loader: 'css-loader',
                                     options: {

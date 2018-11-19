@@ -1,11 +1,19 @@
 {
+    "parser": "babel-eslint",
     "env": {
         "browser": true,
         "commonjs": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:import/recommended"],
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "16.6.3"
+        }
+    },
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -14,9 +22,16 @@
         "sourceType": "module"
     },
     "plugins": [
+        "import",
         "react"
     ],
     "rules": {
+        "no-unused-vars": 0,
+        "no-console": 0,
+        "max-len": [1, 120, 2, {
+            "ignoreComments": true
+        }],
+        "prop-types": [0],
         "indent": [
             0
         ],
