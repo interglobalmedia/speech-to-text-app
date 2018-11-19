@@ -1,5 +1,5 @@
 {
-    "name": "recipe-search-app",
+    "name": "speech-to-text-app",
     "version": "0.0.1",
     "private": true,
     "description": "\"A Recipe Search Api Created with React\"",
