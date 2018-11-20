@@ -2,7 +2,7 @@
     "name": "speech-to-text-app",
     "version": "0.0.1",
     "private": true,
-    "description": "\"A Recipe Search Api Created with React\"",
+    "description": "\"A voice controlled notes app that allows you to take notes by recording your voice\"",
     "main": "index.js",
     "scripts": {
         "test": "jest",
@@ -35,6 +35,7 @@
         "react-dom": "^16.6.3"
     },
     "devDependencies": {
+        "@babel/core": "^7.1.6",
         "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
         "@babel/plugin-proposal-throw-expressions": "^7.0.0",
         "@babel/plugin-syntax-dynamic-import": "^7.0.0",
