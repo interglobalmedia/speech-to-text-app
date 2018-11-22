@@ -13,13 +13,14 @@ const prodConfiguration = env => {
             optimization: {
                 splitChunks: {
                     cacheGroups: {
-                        default: false,
-                        vendors: false,
+                        vendor: {
+                            test: / [\\/]node_modules[\\/]/,
+                            name: 'vendors',
+                            chunks: 'all'
+                        },
                     },
                 },
-                runtimeChunk: {
-                    name: 'manifest',
-                },
+                runtimeChunk: 'single',
                 minimizer: [new UglifyJSPlugin()],
             },
             plugins: [

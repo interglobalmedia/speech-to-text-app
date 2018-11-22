@@ -77,7 +77,6 @@ module.exports = env => {
                         styles: 'src/styles.css',
                         inject: true
                     }),
-                    new webpack.NamedModulesPlugin(),
                     new MiniCssExtractPlugin({
                         filename: PLATFORM === 'production' ? 'styles/[name]-[hash].css' : '[name].css',
                     }),
