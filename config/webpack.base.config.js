@@ -85,9 +85,8 @@ module.exports = env => {
                     new CopyWebpackPlugin([{
                         from: 'src/static'
                     }]),
-                    new WorkboxPlugin.InjectManifest({
-                        swSrc: './src/sw.js',
-                        publicPath: ''
+                    new WorkboxPlugin.GenerateSW({
+                        swDest: 'sw.js'
                     }),
                     new webpack.DefinePlugin({
                         'process.env.VERSION': JSON.stringify(env.VERSION),
