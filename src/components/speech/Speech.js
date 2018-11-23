@@ -90,21 +90,18 @@ class Speech extends Component {
                         <p>Create a new note by using voice recognition.</p>
                         <p>
                             This app is best used on desktop, because there is a 
-                            <strong className={styles.strong}>repeat bug </strong> 
+                            <strong className={styles.strong}> repeat bug </strong> 
                             on <strong className={styles.strong}>Google Chrome mobile</strong>.
                         </p>
-                        <p>Access detailed instructions 
-                            <a 
+                        <p>Access detailed instructions <a 
                             className={styles.documentation} 
                                 href="https://github.com/interglobalmedia/speech-to-text-app" 
-                                target="blank" rel="noopener noreferrer">
-                            here
-                            </a>.
+                                target="blank" rel="noopener noreferrer">here
+                                </a>.
                         </p>
                         <p id="recording-instructions">
                         Press the blue 
-                        <strong className={styles.strong}>
-                        Start Recognition
+                        <strong className={styles.strong}> Start Recognition
                         </strong> button and allow access.
                         </p>
                         <div className={styles.supportMsg} id="support-msg">

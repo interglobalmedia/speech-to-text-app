@@ -5,9 +5,17 @@ const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const VENDOR_LIBS = [
-    'react', 'react-dom'
+    'core-js', 
+    'react', 
+    'react-dom',
+    '@fortawesome/fontawesome-svg-core', 
+    '@fortawesome/free-brands-svg-icons',
+    '@fortawesome/free-regular-svg-icons',
+    '@fortawesome/free-solid-svg-icons',
+    '@fortawesome/react-fontawesome'
 ]
 
 module.exports = env => {
@@ -18,10 +26,11 @@ module.exports = env => {
             {
                 entry: {
                     vendor: VENDOR_LIBS,
-                    bundle: './src/index.js'
+                    main: './src/index.js'
                 },
                 output: {
-                    filename: PLATFORM === 'production' ? 'scripts/[name]-[contenthash].js' : 'scripts/[name].js',
+                    filename: PLATFORM === 'production' ? 'scripts/[name].[chunkhash].chunk.js' : 'scripts/[name].chunk.js',
+                    chunkFilename: PLATFORM === 'production' ? 'scripts/[name].[chunkhash].chunk.js' : 'scripts/[name].chunk.js',
                     path: path.resolve(__dirname, '../dist')
                 },
                 module: {
@@ -63,7 +72,7 @@ module.exports = env => {
                                 use: [{
                                     loader: 'file-loader',
                                     options: {
-                                        name: '[path][name]-[hash:8].[ext]'
+                                        name: '[path][name].[hash:8].[ext]'
                                     },
                                 }],
                         },
@@ -78,16 +87,24 @@ module.exports = env => {
                         inject: true
                     }),
                     new MiniCssExtractPlugin({
-                        filename: PLATFORM === 'production' ? 'styles/[name]-[hash].css' : '[name].css',
+                        filename: PLATFORM === 'production' ? 'styles/[name].[hash].css' : '[name].css',
                     }),
                     new CopyWebpackPlugin([{
                         from: 'src/static'
                     }]),
+                    new WorkboxPlugin.InjectManifest({
+                        swSrc: './src/sw.js'
+                    }),
                     new webpack.DefinePlugin({
                         'process.env.VERSION': JSON.stringify(env.VERSION),
                         'process.env.PLATFORM': JSON.stringify(env.PLATFORM)
                     })
-                ]
+                ],
+            optimization: {
+                splitChunks: {
+                    chunks: 'all'
+                }
             },
+        },
     ])
 }
