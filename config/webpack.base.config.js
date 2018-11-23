@@ -29,9 +29,14 @@ module.exports = env => {
                     main: './src/index.js'
                 },
                 output: {
-                    filename: PLATFORM === 'production' ? 'scripts/[name].[chunkhash].chunk.js' : 'scripts/[name].chunk.js',
-                    chunkFilename: PLATFORM === 'production' ? 'scripts/[name].[chunkhash].chunk.js' : 'scripts/[name].chunk.js',
+                    filename: PLATFORM === 'production' ? 'scripts/[name].[contenthash].chunk.js' : 'scripts/[name].chunk.js',
+                    chunkFilename: PLATFORM === 'production' ? 'scripts/[name].[contenthash].chunk.js' : 'scripts/[name].chunk.js',
                     path: path.resolve(__dirname, '../dist')
+                },
+                optimization: {
+                    splitChunks: {
+                        chunks: 'all'
+                    }
                 },
                 module: {
                     rules: [{
@@ -100,11 +105,6 @@ module.exports = env => {
                         'process.env.PLATFORM': JSON.stringify(env.PLATFORM)
                     })
                 ],
-            optimization: {
-                splitChunks: {
-                    chunks: 'all'
-                }
             },
-        },
-    ])
+        ])
 }
