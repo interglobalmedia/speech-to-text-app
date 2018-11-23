@@ -93,7 +93,7 @@ class Speech extends Component {
                             <strong className={styles.strong}> repeat bug </strong> 
                             on <strong className={styles.strong}>Google Chrome mobile</strong>.
                         </p>
-                        <p>Access detailed instructions `<a 
+                        <p>Access detailed instructions <a 
                             className={styles.documentation} 
                                 href="https://github.com/interglobalmedia/speech-to-text-app" 
                                 target="blank" rel="noopener noreferrer">here
