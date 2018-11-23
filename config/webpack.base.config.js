@@ -30,7 +30,7 @@ module.exports = env => {
                 },
                 output: {
                     filename: PLATFORM === 'production' ? 'scripts/[name].[chunkhash].chunk.js' : 'scripts/[name].chunk.js',
-                    chunkFilename: PLATFORM === 'production' ? 'scripts/[name].[chunkhash].chunk.js' : 'scripts/[name].chunk.js',
+                    chunkFilename: PLATFORM === 'production' ? 'scripts/[id].[chunkhash].chunk.js' : 'scripts/[id].chunk.js',
                     path: path.resolve(__dirname, '../dist')
                 },
                 module: {
