@@ -25,7 +25,7 @@ module.exports = env => {
         return merge([
             {
                 entry: {
-                    entry: path.resolve(__dirname, 'src/index.js'),
+                    main: './src/index.js'
                 },
                 output: {
                     filename: PLATFORM === 'production' ? 'scripts/[name].[contenthash].chunk.js' : 'scripts/[name].chunk.js',
