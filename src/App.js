@@ -8,7 +8,7 @@ function Loading() {
 }
 
 const Speech = Loadable({
-    loader: () => import(/* webpackMode: "eager" */ './components/speech/Speech'),
+    loader: () => import(/* webpackChunkName: "Speech" */ './components/speech/Speech'),
     loading: Loading
 })
 

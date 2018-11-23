@@ -7,17 +7,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
-const VENDOR_LIBS = [
-    'core-js', 
-    'react', 
-    'react-dom',
-    '@fortawesome/fontawesome-svg-core', 
-    '@fortawesome/free-brands-svg-icons',
-    '@fortawesome/free-regular-svg-icons',
-    '@fortawesome/free-solid-svg-icons',
-    '@fortawesome/react-fontawesome'
-]
-
 module.exports = env => {
     
     const {PLATFORM, VERSION} = env;
@@ -29,6 +18,7 @@ module.exports = env => {
                 },
                 output: {
                     filename: PLATFORM === 'production' ? 'scripts/[name].[contenthash].chunk.js' : 'scripts/[name].chunk.js',
+                    chunkFilename: PLATFORM === 'production' ? 'scripts/[name].[contenthash].chunk.js' : 'scripts/[name].chunk.js',
                     path: path.resolve(__dirname, '../dist')
                 },
                 optimization: {
