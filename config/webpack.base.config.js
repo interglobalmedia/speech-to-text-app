@@ -25,12 +25,10 @@ module.exports = env => {
         return merge([
             {
                 entry: {
-                    vendor: VENDOR_LIBS,
-                    main: './src/index.js'
+                    entry: path.resolve(__dirname, 'src/index.js'),
                 },
                 output: {
                     filename: PLATFORM === 'production' ? 'scripts/[name].[contenthash].chunk.js' : 'scripts/[name].chunk.js',
-                    chunkFilename: PLATFORM === 'production' ? 'scripts/[name].[contenthash].chunk.js' : 'scripts/[name].chunk.js',
                     path: path.resolve(__dirname, '../dist')
                 },
                 optimization: {
