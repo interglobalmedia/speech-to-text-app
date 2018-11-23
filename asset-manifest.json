@@ -1,11 +1,14 @@
 {
-  "runtime.js": "scripts/runtime.ef11508e2dbc2e05c864.chunk.js",
-  "vendors~main.js": "scripts/vendors~main.7bfaf4aa0dfa75093ffa.chunk.js",
-  "main.css": "styles/main.342176f1421cdc618e39.css",
-  "main.js": "scripts/main.12984d89d9c4b4608e9f.chunk.js",
+  "vendors~Speech.js": "scripts/vendors~Speech.f0e3c9ecdeb61f482646.chunk.js",
+  "Speech.css": "styles/Speech.4e41ab6b824e5816af2e.css",
+  "Speech.js": "scripts/Speech.d477efae3d7e20cf3ae3.chunk.js",
+  "runtime.js": "scripts/runtime.f6f71c9f7a8cf14b349f.chunk.js",
+  "vendors~main.js": "scripts/vendors~main.1ad1cd98b3cea083930b.chunk.js",
+  "main.css": "styles/main.4e41ab6b824e5816af2e.css",
+  "main.js": "scripts/main.f8d88775b8bc47d47855.chunk.js",
   "src/favicon.ico": "src/favicon.2cc0ddfd.ico",
   "favicon.ico": "favicon.ico",
   "index.html": "index.html",
-  "precache-manifest.baf29cc949ed756211365419cad2df3c.js": "precache-manifest.baf29cc949ed756211365419cad2df3c.js",
+  "precache-manifest.bcc470e9eca699aa64eaf353e20e81fe.js": "precache-manifest.bcc470e9eca699aa64eaf353e20e81fe.js",
   "sw.js": "sw.js"
 }
