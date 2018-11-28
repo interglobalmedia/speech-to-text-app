@@ -75,7 +75,6 @@ module.exports = env => {
                     new CleanWebpackPlugin(['dist']),
                     new HtmlWebpackPlugin({
                         template: 'src/index.html',
-                        favicon: 'src/favicon.ico',
                         styles: 'src/styles.css',
                         inject: true
                     }),

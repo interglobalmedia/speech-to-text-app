@@ -5,6 +5,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const Visualizer = require('webpack-visualizer-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const baseConfig = require('./webpack.base.config');
 
@@ -47,7 +48,8 @@ const prodConfiguration = env => {
                     fileName: ('asset-manifest.json')
                 }),
                 new webpack.HashedModuleIdsPlugin(),
-                new Visualizer({ filename: './statistics.html'})
+                new Visualizer({ filename: './statistics.html'}),
+                new BundleAnalyzerPlugin()
             ]
         }
     ])

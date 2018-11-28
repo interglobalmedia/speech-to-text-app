@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import styles from './App.scss';
 import Loadable from 'react-loadable';
 
-function Loading() {
-    return <h3>Loading...</h3>;
+export function Loading() {
+    return <div className={styles.loader}>Loading...</div>;
 }
 
 const Speech = Loadable({
@@ -30,7 +30,7 @@ const App = () => {
         )
     } else {
         return (
-            <h3>Loading...</h3>
+            <div className={styles.loader}>{Loading()}</div>
         )
     }
 }
