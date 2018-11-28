@@ -1,13 +1,13 @@
 {
   "vendors~Speech.js": "scripts/vendors~Speech.f0e3c9ecdeb61f482646.chunk.js",
-  "Speech.css": "styles/Speech.dadc0db20d2123cd013d.css",
+  "Speech.css": "styles/Speech.1ce34ce0313fe5412439.css",
   "Speech.js": "scripts/Speech.d477efae3d7e20cf3ae3.chunk.js",
   "runtime.js": "scripts/runtime.f6f71c9f7a8cf14b349f.chunk.js",
   "vendors~main.js": "scripts/vendors~main.1ad1cd98b3cea083930b.chunk.js",
-  "main.css": "styles/main.dadc0db20d2123cd013d.css",
+  "main.css": "styles/main.1ce34ce0313fe5412439.css",
   "main.js": "scripts/main.e25c150aed92329eccd2.chunk.js",
   "index.html": "index.html",
   "favicon.ico": "favicon.ico",
-  "precache-manifest.1f84e3d483ca3f52c80d7e0650af0d05.js": "precache-manifest.1f84e3d483ca3f52c80d7e0650af0d05.js",
+  "precache-manifest.19b49a4108286e0febb07078d762eee3.js": "precache-manifest.19b49a4108286e0febb07078d762eee3.js",
   "sw.js": "sw.js"
 }

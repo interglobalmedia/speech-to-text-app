@@ -48,8 +48,7 @@ const prodConfiguration = env => {
                     fileName: ('asset-manifest.json')
                 }),
                 new webpack.HashedModuleIdsPlugin(),
-                new Visualizer({ filename: './statistics.html'}),
-                new BundleAnalyzerPlugin()
+                new Visualizer({ filename: './statistics.html'})
             ]
         }
     ])
