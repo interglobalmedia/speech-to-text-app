@@ -4,7 +4,6 @@ import 'core-js/es6/map';
 import 'core-js/es6/set';
 import App from './App';
 import './styles.scss';
-import './favicon.ico';
 
 ReactDOM.render(<App />, document.getElementById('app'));
 console.log('process.env.VERSION', process.env.VERSION);
