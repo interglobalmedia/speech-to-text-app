@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import styles from './App.scss';
 import Loadable from 'react-loadable';
 
