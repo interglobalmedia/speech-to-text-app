@@ -81,9 +81,6 @@ class Speech extends Component {
                 <p className={styles.pageDescription}>
                     A tiny app that allows you to take notes by recording your voice
                 </p>
-                <h3 className={styles.noBrowserSupport}>
-                    Sorry, Your Browser Does not Support the Web Speech API. Try Opening This Demo In Google Chrome.
-                </h3>
                 <div className={styles.Speech}>
                     <h3>Add New Note</h3>
                     <div className="input-single">
