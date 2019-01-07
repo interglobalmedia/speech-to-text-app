@@ -18,7 +18,7 @@ I also have to figure out how to connect my desktop to my Google Pixel 2 so that
 
 + What does `final` mean in `Speech Recognition` terms? It is the result that is printed to the `final draft div` after `interimResults` are exhausted. Sometimes it might take a second or two for the `interimResults` to `migrate` to the `finalResults`, so make sure that the migration is complete before clicking the `Save Note` button. If you click the `Save Note` button too soon, you might note save the ***whole*** note.
 
-+ When you want to end your note, `click` on the `blue button` again to end your voice recording, and then click on the `Save Note` button. This will `save` your `new note` to `local storage` AND `print it` to the page.
++ When you want to end your note, `click` on the `blue` button again to end your voice recording, and then click on the `Save Note` button. This will `save` your `new note` to `local storage` AND `print it` to the page.
 
 + There is more than one way to go after the previous step. You can either:
 
