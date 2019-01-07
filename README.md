@@ -8,7 +8,7 @@ I also have to figure out how to connect my desktop to my Google Pixel 2 so that
 
 ## How to Use:
 
-+ Go the the application page (hosted by gh-pages): [Voice Controlled Notes App](https://interglobalmedia.github.io/speech-to-text-app/)
++ Go the the application page (hosted by gh-pages): [Voice Controlled Notes App](https://interglobalmedia.github.io/speech-to-text-app/).
 
 + Press the blue, round **Start Recognition** button to allow microphone access and to get started with your first note.
 
@@ -16,15 +16,15 @@ I also have to figure out how to connect my desktop to my Google Pixel 2 so that
 
 + What does `interim` mean in `Speech Recognition` terms? It refers to the `interimResults` property of the Api. Interim results are results that are not yet final. That means that the Api might interpret a word in one way at first and then correct itself and replace it with another.
 
-+ What does `final` mean in `Speech Recognition` terms? It is the result that is printed to the `final draft div` after `interimResults` are exhausted. Sometimes it might take a second or two for the `interim results` to `migrate` to the `final results`, so make sure that the migration is complete before clicking the `Save Note` button. If you click the `Save Note` button too soon, you might note save the ***whole*** note.
++ What does `final` mean in `Speech Recognition` terms? It is the result that is printed to the `final draft div` after `interimResults` are exhausted. Sometimes it might take a second or two for the `interimResults` to `migrate` to the `finalResults`, so make sure that the migration is complete before clicking the `Save Note` button. If you click the `Save Note` button too soon, you might note save the ***whole*** note.
 
 + When you want to end your note, `click` on the `blue button` again to end your voice recording, and then click on the `Save Note` button. This will `save` your `new note` to `local storage` AND `print it` to the page.
 
 + There is more than one way to go after the previous step. You can either:
 
- + decide to continue creating new notes and not worrying about refreshing the page (not a worry) 
+ + Decide to continue creating new notes and not worrying about refreshing the page (not a worry) 
 
- + `stop altogether` (if even just for the moment) after you have made your last save, in which case you can `click` the `refresh button` if you like. This will clear the page of all your notes, but it will NOT remove them.
+ + `Stop altogether` (if even just for the moment) after you have made your last save, in which case you can `click` the `Refresh` button if you like. This will clear the page of all your notes, but it will NOT remove them.
 
 + After you have hit the `Refresh` button, you can click the `Get Storage` button and all your `saved notes` will render to the page.
 
