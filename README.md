@@ -1,6 +1,6 @@
 # A Voice Controlled Notes App Using The Speech Recognition Api And React
 
-This little app was built with React, Webpack, The Web Speech Recognition Api, and local storage. I also use Babel 7 for Js compilation and Jest for testing.
+This little app was built with React, Webpack, The Web Speech Recognition Api, and session ~~local~~ storage. I also use Babel 7 for Js compilation and Jest for testing.
 
 `It only works in Google Chrome`. There is also a `repeat bug` in `mobile Google Chrome`. When you `speak` your note, it repeats at least once and then on save, the repeat(s) is saved as well. In addition, `interimResults` does not render on `Google Chrome mobile`. I will be investigating this further. So for now, this app is best used on desktop, and not on mobile.
 
@@ -18,7 +18,7 @@ I also have to figure out how to connect my desktop to my Google Pixel 2 so that
 
 + What does `final` mean in `Speech Recognition` terms? It is the result that is printed to the `final draft div` after `interimResults` are exhausted. Sometimes it might take a second or two for the `interimResults` to `migrate` to the `finalResults`, so make sure that the migration is complete before clicking the `Save Note` button. If you click the `Save Note` button too soon, you might note save the ***whole*** note.
 
-+ When you want to end your note, `click` on the `blue` button again to end your voice recording, and then click on the `Save Note` button. This will `save` your `new note` to `local storage` AND `print it` to the page.
++ When you want to end your note, `click` on the `blue` button again to end your voice recording, and then click on the `Save Note` button. This will `save` your `new note` to `session storage` AND `print it` to the page.
 
 + There is more than one way to go after the previous step. You can either:
 
@@ -28,15 +28,15 @@ I also have to figure out how to connect my desktop to my Google Pixel 2 so that
 
 + After you have hit the `Refresh` button, you can click the `Get Storage` button and all your `saved notes` will render to the page.
 
-+ If you decide that you are done for the day/session, you can either choose to do nothing and simply keep your notes in local storage for the next time, you can download those notes and work on them on your local desktop, or you can choose to REMOVE THEM ALL from local storage. If you do decide to download your notes, they will `still remain in local storage`. Downloading your notes just ensures that you have an (editable) backup copy for your records.
++ If you decide that you are done for the day/session, you can either choose to do nothing and simply keep your notes in session storage for the next time, you can download those notes and work on them on your session desktop, or you can choose to REMOVE THEM ALL from session storage. If you do decide to download your notes, they will `not remain in storage`. The data only persists during the session. Downloading your notes just ensures that you have an (editable) backup copy for your records.
 
 ### Downloading Notes To The Desktop
 
-All you need to do is click the `Download` button, and you will see a `local-storage.txt` file being downloaded to your desktop. You can continue editing your notes directly in the text file if you like, or simply keep what you have without modifications. When you save your notes to the `local-storage.txt` file, your notes will still remain in local storage.  You would have to click the `Clear Storage` button to remove them forever.
+All you need to do is click the `Download` button, and you will see a `session-storage.txt` file being downloaded to your desktop. You can continue editing your notes directly in the text file if you like, or simply keep what you have without modifications. When you save your notes to the `session-storage.txt` file, your notes will still remain in session storage.  You would have to click the `Clear Storage` button to remove them forever.
 
-### Removing All Your Notes From Local Storage
+### Removing All Your Notes From Session Storage
 
-All you need to do is click the `Clear Storage` button and all the notes you have created will be removed from local storage. You can confirm this by clicking the `Get Storage` button. If the removal was successful, nothing should print to the page.
+All you need to do is click the `Clear Storage` button and all the notes you have created will be removed from session storage. You can confirm this by clicking the `Get Storage` button. If the removal was successful, nothing should print to the page.
 
 ### The Stop Listening Voice Command
 

@@ -4,7 +4,7 @@ export const sessionStorageToFile = () => {
     const storage = document.getElementById('storage').textContent;
     const csv = JSON.stringify(storage);
     const csvAsBlob = new Blob([csv], { type: 'text/plain' });
-    const fileNameToSaveAs = 'local-storage.txt';
+    const fileNameToSaveAs = 'session-storage.txt';
     /* this way instead of createElement('a') because otherwise won't work in Firefox. Only Safari and Chrome. */
     const downloadLink = document.getElementById('save');
     downloadLink.download = fileNameToSaveAs;

@@ -1,7 +1,7 @@
 import { GetNotes } from './GetNotes';
 
 describe('GetNotes', () => {
-    it('should retrieve from localStorage', () => {
+    it('should retrieve from sessionStorage', () => {
         const sessionStorageMock = {
             getItem: jest.fn()
         }
