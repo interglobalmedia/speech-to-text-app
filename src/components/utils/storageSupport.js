@@ -1,4 +1,4 @@
-export function localStorageSupport() {
+export function sessionStorageSupport() {
     return typeof(Storage) !== 'undefined';
 }
 

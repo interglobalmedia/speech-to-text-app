@@ -1,5 +1,5 @@
 export function clearAll() {
-    localStorage.clear();
+    sessionStorage.clear();
     const storage = document.getElementById('storage');
     storage.innerHTML = '';
 }

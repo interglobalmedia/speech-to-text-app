@@ -1,14 +1,14 @@
 import { clearAll, reset } from './helpers';
 
 describe('clearAll', () => {
-    it('should clear all from localStorage', () => {
-        const localStorageMock = {
+    it('should clear all from sessionStorage', () => {
+        const sessionStorageMock = {
             removeItem: jest.fn()
         }
         const dateTime = 'note-' + new Date();
         const note = 'note';
-        localStorageMock.removeItem(dateTime, note)
-        expect(localStorageMock.removeItem).toBeCalledWith(dateTime, note)
+        sessionStorageMock.removeItem(dateTime, note)
+        expect(sessionStorageMock.removeItem).toBeCalledWith(dateTime, note)
     })
 })
 

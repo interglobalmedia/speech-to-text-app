@@ -5,7 +5,7 @@ import styles from './Speech.scss';
 import {clearAll, reset} from '../utils/helpers';
 import {SaveNote} from '../savenote/SaveNote';
 import {GetNotes} from '../getnote/GetNotes';
-import {localStorageToFile} from '../utils/download';
+import {sessionStorageToFile} from '../utils/download';
 
 const SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
@@ -110,7 +110,7 @@ class Speech extends Component {
                         <button onClick={SaveNote} className={styles.saveNote} title="Save Note">
                         Save Note
                         </button>
-                        <button onClick={localStorageToFile} className={styles.fileSaveButton}>
+                        <button onClick={sessionStorageToFile} className={styles.fileSaveButton}>
                             <a className={styles.download} id="save" title="Download Notes">
                             Download
                             </a>

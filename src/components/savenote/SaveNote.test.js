@@ -1,14 +1,14 @@
 import {SaveNote} from './SaveNote';
 
 describe('SaveNote', () => {
-    it('should save to localStorage', () => {
-        const localStorageMock = {
+    it('should save to sessionStorage', () => {
+        const sessionStorageMock = {
             setItem: jest.fn()
         }
         const dateTime = 'note-' + new Date();
         const note = 'note';
-        localStorageMock.setItem(dateTime, note)
-        expect(localStorageMock.setItem).toBeCalledWith(dateTime, note)
+        sessionStorageMock.setItem(dateTime, note)
+        expect(sessionStorageMock.setItem).toBeCalledWith(dateTime, note)
     });
 })
 

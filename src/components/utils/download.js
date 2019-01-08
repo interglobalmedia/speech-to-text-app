@@ -1,6 +1,6 @@
-/* Creating a Text File for notes localstorage text for download */
+/* Creating a Text File for notes sessionstorage text for download */
 
-export const localStorageToFile = () => {
+export const sessionStorageToFile = () => {
     const storage = document.getElementById('storage').textContent;
     const csv = JSON.stringify(storage);
     const csvAsBlob = new Blob([csv], { type: 'text/plain' });

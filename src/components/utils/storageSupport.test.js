@@ -1,4 +1,4 @@
-import {localStorageSupport} from './storageSupport';
+import {sessionStorageSupport} from './storageSupport';
 
 describe('localStorageSupport', () => {
     it('the Storage object should not return undefined', () => {
