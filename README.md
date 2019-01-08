@@ -28,11 +28,11 @@ I also have to figure out how to connect my desktop to my Google Pixel 2 so that
 
 + After you have hit the `Refresh` button, you can click the `Get Storage` button and all your `saved notes` will render to the page.
 
-+ If you decide that you are done for the day/session, you can either choose to do nothing and simply keep your notes in session storage for the next time, you can download those notes and work on them on your session desktop, or you can choose to REMOVE THEM ALL from session storage. If you do decide to download your notes, they will `not remain in storage`. The data only persists during the session. Downloading your notes just ensures that you have an (editable) backup copy for your records.
++ If you decide that you are done for the day/session, you can download those notes and work on them on your local desktop, or you can choose to REMOVE THEM ALL from `session storage`. If you do decide to download your notes, they will `not remain in storage`. The data only persists during the session. Downloading your notes just ensures that you have an (editable) backup copy for your records.
 
 ### Downloading Notes To The Desktop
 
-All you need to do is click the `Download` button, and you will see a `session-storage.txt` file being downloaded to your desktop. You can continue editing your notes directly in the text file if you like, or simply keep what you have without modifications. When you save your notes to the `session-storage.txt` file, your notes will still remain in session storage.  You would have to click the `Clear Storage` button to remove them forever.
+All you need to do is click the `Download` **button**, and you will see a `session-storage.txt` file being downloaded to your desktop. You can continue editing your notes directly in the text file if you like, or simply keep what you have without modifications. When you save your notes to the `session-storage.txt` file, your notes will not remain in session storage after the session is over. You can also **click** the `Clear Storage` **button** to ***remove*** them forever ***before*** the session ends.
 
 ### Removing All Your Notes From Session Storage
 
